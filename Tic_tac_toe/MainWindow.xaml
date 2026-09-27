@@ -1,0 +1,100 @@
+﻿<Window x:Class="Tic_tac_toe.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Хрестики-нулики"
+        Width="400"
+        Height="500">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="{Binding Message}"
+                   FontSize="22"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,15"/>
+
+        <ComboBox Grid.Row="1"
+                  SelectedValue="{Binding Level}"
+                  SelectedValuePath="Tag"
+                  HorizontalAlignment="Center"
+                  Width="150"
+                  Margin="0,0,0,15">
+            <ComboBoxItem Content="Рівень 1" Tag="1"/>
+            <ComboBoxItem Content="Рівень 2" Tag="2"/>
+            <ComboBoxItem Content="Рівень 3" Tag="3"/>
+        </ComboBox>
+
+        <UniformGrid Grid.Row="2"
+                     Rows="3"
+                     Columns="3">
+
+            <Button Content="{Binding Cells[0].Value}"
+                    Command="{Binding MoveCommand}"
+                    CommandParameter="{Binding Cells[0]}"
+                    IsEnabled="{Binding Cells[0].IsEnabled}"
+                    FontSize="35"/>
+
+            <Button Content="{Binding Cells[1].Value}"
+                    Command="{Binding MoveCommand}"
+                    CommandParameter="{Binding Cells[1]}"
+                    IsEnabled="{Binding Cells[1].IsEnabled}"
+                    FontSize="35"/>
+
+            <Button Content="{Binding Cells[2].Value}"
+                    Command="{Binding MoveCommand}"
+                    CommandParameter="{Binding Cells[2]}"
+                    IsEnabled="{Binding Cells[2].IsEnabled}"
+                    FontSize="35"/>
+
+            <Button Content="{Binding Cells[3].Value}"
+                    Command="{Binding MoveCommand}"
+                    CommandParameter="{Binding Cells[3]}"
+                    IsEnabled="{Binding Cells[3].IsEnabled}"
+                    FontSize="35"/>
+
+            <Button Content="{Binding Cells[4].Value}"
+                    Command="{Binding MoveCommand}"
+                    CommandParameter="{Binding Cells[4]}"
+                    IsEnabled="{Binding Cells[4].IsEnabled}"
+                    FontSize="35"/>
+
+            <Button Content="{Binding Cells[5].Value}"
+                    Command="{Binding MoveCommand}"
+                    CommandParameter="{Binding Cells[5]}"
+                    IsEnabled="{Binding Cells[5].IsEnabled}"
+                    FontSize="35"/>
+
+            <Button Content="{Binding Cells[6].Value}"
+                    Command="{Binding MoveCommand}"
+                    CommandParameter="{Binding Cells[6]}"
+                    IsEnabled="{Binding Cells[6].IsEnabled}"
+                    FontSize="35"/>
+
+            <Button Content="{Binding Cells[7].Value}"
+                    Command="{Binding MoveCommand}"
+                    CommandParameter="{Binding Cells[7]}"
+                    IsEnabled="{Binding Cells[7].IsEnabled}"
+                    FontSize="35"/>
+
+            <Button Content="{Binding Cells[8].Value}"
+                    Command="{Binding MoveCommand}"
+                    CommandParameter="{Binding Cells[8]}"
+                    IsEnabled="{Binding Cells[8].IsEnabled}"
+                    FontSize="35"/>
+
+        </UniformGrid>
+
+        <Button Grid.Row="3"
+                Content="Нова гра"
+                Command="{Binding NewGameCommand}"
+                Width="120"
+                Height="35"
+                HorizontalAlignment="Center"
+                Margin="0,15,0,0"/>
+    </Grid>
+</Window>
